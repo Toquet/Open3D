@@ -1,6 +1,12 @@
 name: Windows_cuda
 
 on:
+    workflow_dispatch:
+        inputs:
+            developer_build:
+                description: "Set to OFF for Release wheels"
+                required: false
+                default: "ON"
     push:
         branches:
             - master
