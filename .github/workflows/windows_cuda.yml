@@ -1,4 +1,4 @@
-name: Windows
+name: Windows_cuda
 
 on:
     workflow_dispatch:
