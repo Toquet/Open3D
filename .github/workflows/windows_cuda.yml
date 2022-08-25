@@ -46,6 +46,8 @@ jobs:
                 exclude:
                     - SHARED: ON
                       STATIC_RUNTIME: ON
+                    - SHARED: OFF
+                    - BUILD_CUDA: OFF
                 include:
                     - BUILD_CUDA: ON
                       CUDA_VERSION: 11.0.3
@@ -109,6 +111,8 @@ jobs:
                   cmake -G "Visual Studio 16 2019" -A x64 `
                     -DDEVELOPER_BUILD="${env:DEVELOPER_BUILD}" `
                     -DBUILD_EXAMPLES=OFF `
+                    -DBUILD_PYTHON_MODULE=OFF `
+                    -DBUILD_GUI=OFF `
                     -DCMAKE_INSTALL_PREFIX="C:\Program Files\Open3D" `
                     -DBUILD_SHARED_LIBS=${{ matrix.SHARED }} `
                     -DSTATIC_WINDOWS_RUNTIME=${{ matrix.STATIC_RUNTIME }} `
